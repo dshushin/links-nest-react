@@ -4,10 +4,19 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_DB=postgres
+      - POSTGRES_DB=linksnest
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
       - "5454:5432"
     volumes:
-      - ./backend:/backend
+      - linksnestdb:/backend/db
+#  migrations:
+#    build: migrations
+#    command: "yarn run migrate"
+#    depends_on:
+#      - db
+##    volumes:
+##      - ./backend/src:/backend/src
+volumes:
+    linksnestdb:
