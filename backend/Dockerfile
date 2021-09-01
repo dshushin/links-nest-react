@@ -11,6 +11,8 @@ COPY tsconfig.build.json tsconfig.build.json
 
 COPY src src
 
+RUN yarn build
+
 EXPOSE 4000
 
 CMD ["yarn", "run", "start"]

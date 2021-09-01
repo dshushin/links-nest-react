@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  dbcreate:
+    build:
+      context: backend
+    command: "yarn run db:create -n $NAME"
+    volumes:
+      - ./backend/src:/backend/src

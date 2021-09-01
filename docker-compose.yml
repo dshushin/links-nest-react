@@ -11,18 +11,10 @@ services:
       - "5454:5432"
     volumes:
       - linksnestdb:/backend/db
-#  migrations:
-#    build: migrations
-#    command: "yarn run migrate"
-#    depends_on:
-#      - db
-##    volumes:
-##      - ./backend/src:/backend/src
-
   backend:
     build:
       context: backend
-    command: "yarn start:dev"
+    command: "yarn run start:dev"
 #    volumes:
 #      - ./backend:/backend
     ports:
