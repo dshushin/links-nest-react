@@ -16,6 +16,7 @@ services:
       context: backend
     command: "yarn start:dev"
     volumes:
+#      - ./backend:/backend
       - ./backend/src:/backend/src
       - ./backend/package.json:/backend/package.json
       - ./backend/package-lock.json:/backend/package-lock.json
