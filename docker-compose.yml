@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   db:
-    image: postgres
+    image: postgres:13.4-alpine
     environment:
       - POSTGRES_DB=linksnest
       - POSTGRES_USER=postgres
@@ -10,17 +10,25 @@ services:
     ports:
       - "5454:5432"
     volumes:
-      - linksnestdb:/backend/db
+      - linksnestdb:/var/lib/postgresql/data/
   backend:
     build:
       context: backend
-    command: "yarn run start:dev"
-#    volumes:
-#      - ./backend:/backend
+    command: "yarn start:dev"
+    volumes:
+      - ./backend/src:/backend/src
+      - ./backend/package.json:/backend/package.json
+      - ./backend/package-lock.json:/backend/package-lock.json
     ports:
       - "4000:4000"
     depends_on:
       - db
-#      - migrations
+  frontend:
+    build:
+      context: frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/frontend/src
 volumes:
     linksnestdb:
