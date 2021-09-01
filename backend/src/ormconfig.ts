@@ -9,10 +9,10 @@ const config: ConnectionOptions = {
   database: 'linksnest',
   entities: ['dist/**/*.entity{.ts,.js}'],
   synchronize: false,
-  migrationsRun: true,
-  migrations: ['src/migrations/**/*{.ts,.js}'],
+  migrationsRun: false,
+  migrations: ['dist/migrations/**/*{.ts,.js}'],
   cli: {
-    migrationsDir: 'src/migrations',
+    migrationsDir: 'dist/migrations',
   },
 };
 
