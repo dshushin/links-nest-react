@@ -6,5 +6,11 @@ export class LinkEntity {
   id: number;
 
   @Column()
-  name: string;
+  description: string;
+
+  @Column()
+  url: string;
+
+  @Column()
+  tag: string;
 }
