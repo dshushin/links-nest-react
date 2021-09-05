@@ -6,6 +6,7 @@ import { LinksModule } from './links/links.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { TagsModule } from './tags/tags.module';
 import config from './ormconfig';
 
 @Module({
@@ -14,6 +15,7 @@ import config from './ormconfig';
     UsersModule,
     LinksModule,
     AuthModule,
+    TagsModule,
   ],
   controllers: [AppController, AuthController],
   providers: [AppService],
