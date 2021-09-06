@@ -10,7 +10,4 @@ export class CreateLinkDto {
 
   @IsNotEmpty()
   readonly tags: string[];
-
-  @IsNotEmpty()
-  readonly linkOwner: string;
 }

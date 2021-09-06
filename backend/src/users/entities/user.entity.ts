@@ -33,6 +33,11 @@ export class User {
     this.password = await hash(this.password, 10);
   }
 
+  @BeforeInsert()
+  emailToLowerCase() {
+    this.email = this.email.toLowerCase();
+  }
+
   @OneToMany(() => Link, (link) => link.linkOwner)
   links: Link[];
 

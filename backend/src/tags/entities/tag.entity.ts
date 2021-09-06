@@ -20,9 +20,6 @@ export class Tag {
   @ManyToMany(
     () => Link,
     (link) => link.tags, // what is "tags" within the Link Entity
-    {
-      cascade: true,
-    },
   )
   links: Tag[];
 
