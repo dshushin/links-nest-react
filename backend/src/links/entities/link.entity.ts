@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
   ManyToOne,
   JoinColumn,
+  Index,
 } from 'typeorm';
 import { Tag } from '../../tags/entities/tag.entity';
 import { User } from '../../users/entities/user.entity';
@@ -16,6 +17,7 @@ export class Link {
   id: number;
 
   @Column()
+  @Index()
   description: string;
 
   @Column()

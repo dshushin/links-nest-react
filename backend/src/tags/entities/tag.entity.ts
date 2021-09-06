@@ -1,6 +1,7 @@
 import {
   Column,
   Entity,
+  Index,
   JoinColumn,
   ManyToMany,
   ManyToOne,
@@ -15,6 +16,7 @@ export class Tag {
   id: number;
 
   @Column({ unique: true })
+  @Index()
   tagName: string;
 
   @ManyToMany(
