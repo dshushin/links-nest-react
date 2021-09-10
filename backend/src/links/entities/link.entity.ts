@@ -23,7 +23,7 @@ export class Link {
   @Column()
   url: string;
 
-  @JoinTable() // 👈 Join the 2 tables - only the OWNER-side does this
+  @JoinTable({ name: 'links_tags' }) // 👈 Join the 2 tables - only the OWNER-side does this
   @ManyToMany(
     () => Tag,
     (tag) => tag.links, // what is "link" within the Tag Entity
@@ -34,6 +34,9 @@ export class Link {
   tags: Tag[];
 
   @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
-  @ManyToOne(() => User, (linkOwner) => linkOwner.links, { eager: true })
+  @ManyToOne(() => User, (linkOwner) => linkOwner.links, {
+    eager: true,
+    nullable: false,
+  })
   linkOwner: User;
 }

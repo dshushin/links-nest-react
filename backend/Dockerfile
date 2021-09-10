@@ -8,7 +8,6 @@ RUN yarn install
 
 COPY tsconfig.json tsconfig.json
 COPY tsconfig.build.json tsconfig.build.json
-
 COPY src src
 
 RUN yarn build

@@ -26,6 +26,9 @@ export class Tag {
   links: Tag[];
 
   @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
-  @ManyToOne(() => User, (tagOwner) => tagOwner.tags, { eager: true })
+  @ManyToOne(() => User, (tagOwner) => tagOwner.tags, {
+    eager: true,
+    nullable: false,
+  })
   tagOwner: User;
 }

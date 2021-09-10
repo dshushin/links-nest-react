@@ -24,7 +24,7 @@ export class TagsService {
   }
 
   findAll() {
-    return this.tagRepository.find({ relations: ['links'] });
+    return this.tagRepository.find();
   }
 
   async findOne(id: number) {
