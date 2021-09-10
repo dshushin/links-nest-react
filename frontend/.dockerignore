@@ -1,4 +1,4 @@
-node_modules
-.git
-.idea
-Dockerfile
+/node_modules/
+/dist/
+/Dockerfile
+/test/
