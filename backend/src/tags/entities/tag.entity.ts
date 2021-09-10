@@ -8,7 +8,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Link } from '../../links/entities/link.entity';
-import { User } from '../../users/entities/user.entity';
+import User from '../../users/user.entity';
 
 @Entity({ name: 'tags' })
 export class Tag {

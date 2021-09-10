@@ -7,11 +7,12 @@ import {
 } from 'typeorm';
 import { Exclude } from 'class-transformer';
 import { hash } from 'bcrypt';
-import { Link } from '../../links/entities/link.entity';
-import { Tag } from '../../tags/entities/tag.entity';
+import { Link } from '../links/entities/link.entity';
+import { Tag } from '../tags/entities/tag.entity';
+import { MinLength } from 'class-validator';
 
 @Entity({ name: 'users' })
-export class User {
+export default class User {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -26,6 +27,7 @@ export class User {
 
   @Column({ select: false })
   @Exclude()
+  @MinLength(7)
   password: string;
 
   @BeforeInsert()

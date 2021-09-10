@@ -5,7 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Link } from './entities/link.entity';
 import { Repository } from 'typeorm';
 import { Tag } from '../tags/entities/tag.entity';
-import { User } from '../users/entities/user.entity';
+import User from '../users/user.entity';
 
 @Injectable()
 export class LinksService {
